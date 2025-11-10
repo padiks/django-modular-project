@@ -169,21 +169,22 @@ $ source venv/bin/activate
 
 ```bash
 $ tree -L 2
-.
-├── apps/
-│   ├── __init__.py
-│   ├── categories/
-│   └── uom/
-├── db.sqlite3
-├── dstock/
+
+dstock/
+├── manage.py
+├── core/
 │   ├── __init__.py
 │   ├── settings.py
 │   ├── urls.py
 │   ├── wsgi.py
 │   └── asgi.py
-├── static/
+├── apps/
+│   ├── __init__.py
+│   └── uom/
 ├── templates/
-├── manage.py
+│   └── uom/
+│       └── index.html
+├── static/
 └── venv/
 ```
 
