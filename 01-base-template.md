@@ -24,8 +24,11 @@ $ source venv/bin/activate
 # Create apps folder
 (venv) $ mkdir apps
 
-# Create sample module uom
-(venv) $ python manage.py startapp apps.uom
+# Create a normal app (Django doesn't support dot paths here)
+(venv) $ python manage.py startapp uom
+
+# Move it into the apps folder
+(venv) $ mv uom apps/
 
 # Create templates and static folders
 (venv) $ mkdir templates static
@@ -63,14 +66,24 @@ dstock/
 Open `core/settings.py` and edit:
 
 ```python
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from pathlib import Path
+import sys
+
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Add apps folder to Python path
-import sys
-sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+sys.path.insert(0, str(BASE_DIR / 'apps'))
 
-# Minimal installed apps
+# Local development
+DEBUG = True
+ALLOWED_HOSTS = []
+
+# If you want DEBUG = False (like production)
+# DEBUG = False
+# ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
+SECRET_KEY = 'The quick brown fox jumps over the fence.'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -78,12 +91,54 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.uom',
+    'uom',
 ]
 
-# Templates and static files
-TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates')]
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+ROOT_URLCONF = 'core.urls'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+WSGI_APPLICATION = 'core.wsgi.application'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'UTC'
+USE_I18N = True
+USE_TZ = True
+
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ```
 
 ---
