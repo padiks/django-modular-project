@@ -1,4 +1,4 @@
-# Despatch - Django Modular CRUD
+# Stock - Django Modular CRUD
 
 **Despatch** is a lightweight, modular **Django** application that demonstrates complete **CRUD (Create, Read, Update, Delete)** operations using an **SQLite** database. It’s designed as a learning project for building modular Django apps with blueprints, SQLAlchemy, and Bootstrap 5.
 
@@ -7,9 +7,10 @@
 ### 🌱 Django Modular Project Structure
 
 ```
-fdespatch/
+dstock/
 ├── manage.py                              # Django management entrypoint
-├── fdespatch/                             # Project core (settings, URLs, WSGI)
+│
+├── core/                                  # Project core (settings, URLs, WSGI)
 │   ├── __init__.py
 │   ├── settings.py                        # Centralized settings (DB, paths, debug, apps)
 │   ├── urls.py                            # Root URL router, includes app-level URLs
@@ -71,7 +72,7 @@ fdespatch/
 
 | Flask Concept         | Django Equivalent                     | Notes                                                                 |
 | --------------------- | ------------------------------------- | --------------------------------------------------------------------- |
-| `app.py`              | `manage.py` + `fdespatch/settings.py` | Django uses `manage.py` and project settings for initialization.      |
+| `app.py`              | `manage.py` + `core/settings.py` | Django uses `manage.py` and project settings for initialization.      |
 | `config.py`           | `settings.py`                         | All environment, DB, and path configs go here.                        |
 | Blueprints in `apps/` | Django “apps” in `apps/`              | Same modularity pattern — each app has its own models, views, URLs.   |
 | `routes.py`           | `urls.py` + `views.py`                | Django separates routing and view logic.                              |
@@ -86,7 +87,7 @@ fdespatch/
 ### 🧩 Example Django Root `urls.py`
 
 ```python
-# fdespatch/urls.py
+# core/urls.py
 from django.contrib import admin
 from django.urls import path, include
 
