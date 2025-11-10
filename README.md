@@ -124,8 +124,9 @@ def index(request):
 
 ---
 
-### 🌱 Django Modular Project Structure
+### 🌱 Flask Modular Project Structure
 
+```
 fdespatch/
 ├── app.py                          # Main entrypoint (creates app via factory pattern)
 ├── config.py                       # Centralized settings (paths, DB URI, debug flags)
@@ -160,6 +161,7 @@ fdespatch/
 │       └── book_207114.png         # Favicon or icon
 └── data/
     └── db.sqlite3                  # Same database as CI3 (direct reuse)
+```
 
 ---
 
