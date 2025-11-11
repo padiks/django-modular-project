@@ -1,0 +1,42 @@
+.nav-width {
+  width: 80%;
+}
+
+@media (max-width: 768px) {
+  .nav-width {
+    width: 90%;
+  }
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Make the whole page a column flex container */
+html, body {
+    height: 100%;          /* full height */
+    margin: 0;             /* remove default margin */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Content container grows to fill available space */
+.container {
+    flex: 1;               /* takes remaining space */
+}
+
+/* Footer styling */
+footer {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Disable links in the nav */
+.nav-link.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: #6c757d;  /* Optional: Change the color to make it look inactive */
+    text-decoration: line-through;  /* Add strikethrough */
+}
+
