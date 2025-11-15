@@ -1,8 +1,8 @@
-# **Summation of 5 Numbers with Django and Debug Toolbar Integration**
+# **Summation and Debug Toolbar Integration**
 
 ### **Short Description:**
 
-A Django web application that allows users to input five numbers and compute their sum. Additionally, the project integrates the Django Debug Toolbar for enhanced development debugging, providing insights into requests, SQL queries, and more.
+A Django web application that allows users to input five numbers and compute their sum. Additionally, the project integrates the Django Debug Toolbar for enhanced development debugging, providing insights into requests, and more.
 
 ---
 
@@ -413,12 +413,7 @@ Paste your **exact** template:
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</
-```
-
-
-html>
-
+</html>
 ```
 
 ---
