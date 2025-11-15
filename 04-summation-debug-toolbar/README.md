@@ -75,7 +75,7 @@ This is your **project root folder**, as we discussed.
 It’s best practice to use a virtual environment per project:
 
 ```bash
-cd /home/user/Public/web
+cd /home/user/Public/web/dfemsum
 python3 -m venv venv
 ```
 
