@@ -12,9 +12,9 @@ dstock/
 │
 ├── core/                                  # Project core (settings, URLs, WSGI)
 │   ├── __init__.py
-│   ├── settings.py                        # Centralized settings (DB, paths, debug, apps)
+│   ├── settings.py                        # Optional for centralized settings (DB, paths, debug, apps)
 │   ├── urls.py                            # Root URL router, includes app-level URLs
-│   ├── wsgi.py                            # WSGI entrypoint for Apache/mod_wsgi
+│   ├── wsgi.py                            # Optional for WSGI entrypoint for Apache/mod_wsgi
 │   └── asgi.py                            # Optional for async support (future-proof)
 │
 ├── apps/                                  # Your modular app collection
@@ -44,24 +44,22 @@ dstock/
 │   │       └── uom/
 │   │           └── index.html
 │   │
-│   └── utils/                             # Shared helpers (non-model logic)
+│   └── utils/                             # Optional for shared helpers (non-model logic)
 │       ├── __init__.py
-│       └── helpers.py                     # Markdown rendering, formatting, etc.
+│       └── helpers.py                     # Optional for Markdown rendering, formatting, etc.
 │
 ├── templates/                             # Global templates shared across all apps
 │   ├── base.html                          # Base layout (extends in all app templates)
 │   ├── 404.html                           # Optional: custom error page
-│   └── includes/                          # For reusable template parts (header/footer)
+│   └── includes/                          # Optional for reusable template parts (header/footer)
 │       ├── header.html
 │       └── footer.html
 │
 ├── static/                                # Shared static files (CSS/JS/Images)
 │   ├── css/
 │   │   └── style.css
-│   ├── js/
-│   │   └── mode.js
 │   └── img/
-│       └── book_207114.png
+│       └── favicon.png
 │
 └── db.sqlite3                             # SQLite database
 ```
@@ -72,7 +70,7 @@ dstock/
 
 | Flask Concept         | Django Equivalent                     | Notes                                                                 |
 | --------------------- | ------------------------------------- | --------------------------------------------------------------------- |
-| `app.py`              | `manage.py` + `core/settings.py` | Django uses `manage.py` and project settings for initialization.      |
+| `app.py`              | `manage.py` + `core/settings.py`      | Django uses `manage.py` and project settings for initialization.      |
 | `config.py`           | `settings.py`                         | All environment, DB, and path configs go here.                        |
 | Blueprints in `apps/` | Django “apps” in `apps/`              | Same modularity pattern — each app has its own models, views, URLs.   |
 | `routes.py`           | `urls.py` + `views.py`                | Django separates routing and view logic.                              |
@@ -80,47 +78,7 @@ dstock/
 | Templates per module  | `apps/<module>/templates/<module>/`   | Django finds them automatically if configured in `TEMPLATES['DIRS']`. |
 | Global templates      | `templates/`                          | Works the same — your `base.html`, `404.html`, etc.                   |
 | Static files          | `static/`                             | Standard Django static collection folder.                             |
-| Database              | `data/db.sqlite3`                     | You can point `DATABASES['default']['NAME']` to this path.            |
-
----
-
-### 🧩 Example Django Root `urls.py`
-
-```python
-# core/urls.py
-from django.contrib import admin
-from django.urls import path, include
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('categories/', include('apps.categories.urls')),
-    path('uom/', include('apps.uom.urls')),
-]
-```
-
----
-
-### 🪶 Example App URL + View (like Flask’s routes.py)
-
-**apps/uom/urls.py**
-
-```python
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('', views.index, name='uom_index'),
-]
-```
-
-**apps/uom/views.py**
-
-```python
-from django.shortcuts import render
-
-def index(request):
-    return render(request, 'uom/index.html')
-```
+| Database              | `db.sqlite3     `                     | You can point `DATABASES['default']['NAME']` to this path.            |
 
 ---
 
