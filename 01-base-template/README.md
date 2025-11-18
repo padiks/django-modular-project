@@ -129,7 +129,7 @@ In your `uom/templates/uom/index.html`:
 ```html
 {% extends 'base.html' %}
 
-{% block title %}{{title}}{% endblock %}
+{% block title %}{{title}} - Django & SQLite{% endblock %}
 
 {% block content %}
 	<div class="card shadow-lg p-4 mb-3">
@@ -273,4 +273,5 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 ---
 
 This is the **minimal working setup** for templating with `base.html` and using `uom` as the home app. This guide does not require creating a new database file. The SQLite database is already provided in the repository along with sample data.
+
 
