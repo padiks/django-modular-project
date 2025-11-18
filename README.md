@@ -68,18 +68,18 @@ dstock/
 
 ### ⚙️ Highlights
 
-| **Django Concept**                  | **Explanation**                                                                                  | **Notes**                                                                              |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
-| `manage.py`                         | Central command-line utility for running and managing the project.                               | Handles database migrations, running the server, and more.                             |
-| `settings.py`                       | Contains all configurations for the project (database, static files, etc.).                      | Configuration for database, apps, middleware, etc.                                     |
-| Django Apps                         | Independent modules within the `apps/` directory that handle a specific part of the application. | Similar to Flask's blueprint system, but uses a more integrated approach.              |
-| `urls.py`                           | Defines URL patterns for routing requests to views.                                              | Routes are mapped to views here, similar to Flask's `routes.py`.                       |
-| `views.py`                          | Contains view functions that handle requests and return responses.                               | Similar to Flask's route handlers.                                                     |
-| `apps/utils/`                       | Shared modules or utility functions used across multiple apps.                                   | Like Flask's shared utility modules, but Django doesn't require importing `Blueprint`. |
-| `apps/<module>/templates/<module>/` | Templates are placed per app in the `templates` directory.                                       | Django automatically looks in `templates/` for rendering.                              |
-| `templates/`                        | Global templates (like `base.html`, `404.html`) are placed here.                                 | Common templates used across the entire project.                                       |
-| `static/`                           | Folder where static files like CSS, JS, and images are stored.                                   | Standard static file directory for serving assets.                                     |
-| `db.sqlite3`                        | Default database for the project, usually SQLite.                                                | You configure this in `DATABASES['default']` in `settings.py`.                         |
+| **Django Concept**                  | **Notes**                                                                                                                                                                 |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `manage.py`                         | Django uses `manage.py` for project initialization and running commands.                                                                                                  |
+| `settings.py`                       | Contains all configurations for the environment, database, paths, etc.                                                                                                    |
+| `apps/`                             | Modular structure where each app (e.g., `uom`, `products`) has its own models, views, and routes.                                                                         |
+| `urls.py`                           | Defines routes (URLs) and maps them to specific views.                                                                                                                    |
+| `views.py`                          | Contains the view functions that handle requests and return responses.                                                                                                    |
+| `apps/utils/`                       | Shared utility functions, just like reusable modules.                                                                                                                     |
+| `apps/<module>/templates/<module>/` | Templates specific to each app are stored in the `templates` folder inside the app directory.                                                                             |
+| `templates/`                        | Global templates like `base.html`, `404.html`, etc., that are shared across the project.                                                                                  |
+| `static/`                           | Contains static files (CSS, JavaScript, images) accessible by the browser.                                                                                                |
+| `db.sqlite3`                        | The project includes a sample SQLite database file (`db.sqlite3`) with pre-populated tables and data. Point to this file in `DATABASES['default']['NAME']` configuration. |
 
 ---
 
