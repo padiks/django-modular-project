@@ -153,7 +153,10 @@ In your `uom/templates/uom/index.html`:
 );</code></pre>
 
 <h3>{{ title }}</h3>
-<p>{{ welcome_message }}</p>
+<p>
+{{ welcome_message }}.
+This guide does not require creating a new database file. The SQLite database is already provided in the repository along with sample data. This guide is only for displaying the schema and reading data.
+</p>
  </div>
 {% endblock %}
 ```
@@ -172,7 +175,7 @@ Example skeleton:
 <head>{% load static %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}Django Pilot{% endblock %}</title>
+  <title>{% block title %}Django & SQLite{% endblock %}</title>
   <link href="{% static 'img/favicon.png' %}" rel="icon" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
@@ -269,4 +272,5 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 
 ---
 
-This is the **minimal working setup** for templating with `base.html` and using `uom` as the home app.
+This is the **minimal working setup** for templating with `base.html` and using `uom` as the home app. This guide does not require creating a new database file. The SQLite database is already provided in the repository along with sample data.
+
