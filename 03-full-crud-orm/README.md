@@ -311,7 +311,7 @@ Got it! Here's how we can integrate that into the guide:
 * ORM-only — no raw SQL for CRUD
 * Existing SQLite DB only — no migrations needed
 
-### Optional: Using **Django Admin Integration** Admin to Manage `StockItemUOM`
+### Optional: Using **Django Admin Integration** to Manage `StockItemUOM`
 
 Once you add the following code to your `admin.py`, you can log into the Django admin interface at `http://localhost:8000/admin` and easily manage your `StockItemUOM` records. The project already includes a sample SQLite database with tables and data, so you don’t need to worry about setting up the database.
 
