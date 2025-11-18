@@ -68,17 +68,18 @@ dstock/
 
 ### ⚙️ Highlights
 
-| Flask Concept         | Django Equivalent                     | Notes                                                                 |
-| --------------------- | ------------------------------------- | --------------------------------------------------------------------- |
-| `app.py`              | `manage.py` + `core/settings.py`      | Django uses `manage.py` and project settings for initialization.      |
-| `config.py`           | `settings.py`                         | All environment, DB, and path configs go here.                        |
-| Blueprints in `apps/` | Django “apps” in `apps/`              | Same modularity pattern — each app has its own models, views, URLs.   |
-| `routes.py`           | `urls.py` + `views.py`                | Django separates routing and view logic.                              |
-| Shared utilities      | `apps/utils/`                         | Works exactly like Flask’s shared modules.                            |
-| Templates per module  | `apps/<module>/templates/<module>/`   | Django finds them automatically if configured in `TEMPLATES['DIRS']`. |
-| Global templates      | `templates/`                          | Works the same — your `base.html`, `404.html`, etc.                   |
-| Static files          | `static/`                             | Standard Django static collection folder.                             |
-| Database              | `db.sqlite3     `                     | You can point `DATABASES['default']['NAME']` to this path.            |
+| **Django Concept**                  | **Explanation**                                                                                  | **Notes**                                                                              |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
+| `manage.py`                         | Central command-line utility for running and managing the project.                               | Handles database migrations, running the server, and more.                             |
+| `settings.py`                       | Contains all configurations for the project (database, static files, etc.).                      | Configuration for database, apps, middleware, etc.                                     |
+| Django Apps                         | Independent modules within the `apps/` directory that handle a specific part of the application. | Similar to Flask's blueprint system, but uses a more integrated approach.              |
+| `urls.py`                           | Defines URL patterns for routing requests to views.                                              | Routes are mapped to views here, similar to Flask's `routes.py`.                       |
+| `views.py`                          | Contains view functions that handle requests and return responses.                               | Similar to Flask's route handlers.                                                     |
+| `apps/utils/`                       | Shared modules or utility functions used across multiple apps.                                   | Like Flask's shared utility modules, but Django doesn't require importing `Blueprint`. |
+| `apps/<module>/templates/<module>/` | Templates are placed per app in the `templates` directory.                                       | Django automatically looks in `templates/` for rendering.                              |
+| `templates/`                        | Global templates (like `base.html`, `404.html`) are placed here.                                 | Common templates used across the entire project.                                       |
+| `static/`                           | Folder where static files like CSS, JS, and images are stored.                                   | Standard static file directory for serving assets.                                     |
+| `db.sqlite3`                        | Default database for the project, usually SQLite.                                                | You configure this in `DATABASES['default']` in `settings.py`.                         |
 
 ---
 
