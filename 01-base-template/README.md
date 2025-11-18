@@ -155,7 +155,8 @@ In your `uom/templates/uom/index.html`:
 <h3>{{ title }}</h3>
 <p>
 {{ welcome_message }}.
-This guide does not require creating a new database file. The SQLite database is already provided in the repository along with sample data. This guide is only for displaying the schema and reading data.
+This guide does not require creating a new database file. The SQLite database is already provided in the repository
+along with sample data. This guide is only for displaying the schema and reading data.
 </p>
  </div>
 {% endblock %}
@@ -273,5 +274,6 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 ---
 
 This is the **minimal working setup** for templating with `base.html` and using `uom` as the home app. This guide does not require creating a new database file. The SQLite database is already provided in the repository along with sample data.
+
 
 
