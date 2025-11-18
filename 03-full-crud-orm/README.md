@@ -32,6 +32,8 @@ project_folder/
 │       ├── views.py
 │       ├── urls.py
 │       ├── forms.py
+│       ├── admin.py   # Optional
+│       ├── tests.py   # Optional
 │       └── templates/
 │           └── uom/
 │               ├── index.html
@@ -294,6 +296,8 @@ urlpatterns = [
 {% endblock %}
 ```
 
+Got it! Here's how we can integrate that into the guide:
+
 ---
 
 # 🎉 **Done!**
@@ -306,3 +310,40 @@ urlpatterns = [
 * Status as a dropdown
 * ORM-only — no raw SQL for CRUD
 * Existing SQLite DB only — no migrations needed
+
+### Optional: Using **Django Admin Integration** Admin to Manage `StockItemUOM`
+
+Once you add the following code to your `admin.py`, you can log into the Django admin interface at `http://localhost:8000/admin` and easily manage your `StockItemUOM` records. The project already includes a sample SQLite database with tables and data, so you don’t need to worry about setting up the database.
+
+To log into the Django admin interface, use the following credentials:
+
+* **Username:** `user`
+* **Password:** `q`
+
+### `apps/uom/admin.py`
+
+```python
+from django.contrib import admin
+from .models import StockItemUOM
+
+class StockItemUOMAdmin(admin.ModelAdmin):
+    # Make all fields read-only
+    readonly_fields = ('id', 'name', 'description', 'status', 'created_at', 'updated_at')
+    
+    # Optionally, you can exclude certain fields from the admin form
+    # exclude = ('field_to_exclude',)
+
+    # If you want to make the model non-editable, you can define:
+    # fields = ('name', 'description', 'status')  # and exclude other fields from admin
+    
+    # You can add more filters, ordering, or search fields here if needed
+    search_fields = ['name']
+    list_filter = ['status']
+    list_display = ['name', 'status', 'created_at', 'updated_at']
+
+admin.site.register(StockItemUOM, StockItemUOMAdmin)
+```
+
+Once you've added this to your `admin.py`, head over to `http://localhost:8000/admin` in your browser, log in with the provided credentials, and start managing your `StockItemUOM` records right from the admin panel.
+
+This is entirely optional, but it can save time when working with large datasets!
