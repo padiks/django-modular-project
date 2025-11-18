@@ -20,9 +20,9 @@ dstock/
 ├── apps/                                  # Your modular app collection
 │   ├── __init__.py
 │   │
-│   ├── categories/                        # Module 1: Categories
+│   ├── categories/                        # Module 1: Units of Measure
 │   │   ├── __init__.py
-│   │   ├── admin.py                       # Admin registration
+│   │   ├── admin.py                       # Optional Admin registration
 │   │   ├── apps.py                        # Django app config
 │   │   ├── models.py                      # Models (tables)
 │   │   ├── urls.py                        # App-specific routes
@@ -33,7 +33,7 @@ dstock/
 │   │       └── categories/
 │   │           └── index.html             # App-level template
 │   │
-│   ├── uom/                               # Module 2: Units of Measure
+│   ├── categories/                               # Module 2: Categories
 │   │   ├── __init__.py
 │   │   ├── admin.py
 │   │   ├── apps.py
@@ -41,7 +41,7 @@ dstock/
 │   │   ├── urls.py
 │   │   ├── views.py
 │   │   └── templates/
-│   │       └── uom/
+│   │       └── categories/
 │   │           └── index.html
 │   │
 │   └── utils/                             # Optional for shared helpers (non-model logic)
