@@ -20,7 +20,7 @@ dstock/
 ├── apps/                                  # Your modular app collection
 │   ├── __init__.py
 │   │
-│   ├── categories/                        # Module 1: Units of Measure
+│   ├── uom/                               # Module 1: Units of Measure
 │   │   ├── __init__.py
 │   │   ├── admin.py                       # Optional Admin registration
 │   │   ├── apps.py                        # Django app config
@@ -30,7 +30,7 @@ dstock/
 │   │   ├── forms.py                       # Optional (forms for CRUD)
 │   │   ├── tests.py                       # Optional tests
 │   │   └── templates/
-│   │       └── categories/
+│   │       └── uom/
 │   │           └── index.html             # App-level template
 │   │
 │   ├── categories/                               # Module 2: Categories
