@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}{{title}} - Django & SQLite{% endblock %}
+
+{% block content %}
+<div class="card shadow-lg p-4 mb-3">
+	<h4 class="mb-4 text-center">Database db.sqlite3 / SQLite Data Dump (Using Model)</h4>
+	<div class="mb-3 d-flex flex-wrap align-items-center gap-2">
+		<label for="tableSelect" class="form-label mb-0">Table:</label>
+		<select class="form-select form-select-sm" id="tableSelect" style="width: auto; min-width: 150px;">
+			<option value="stock_items_uom">stock_items_uom</option>			
+			<option value="stock_movements">stock_movements</option>			
+			<option value="stock_items">stock_items</option>
+			<option value="stock_document_type">stock_document_type</option>
+			<option value="stock_items_categories">stock_items_categories</option>
+		</select>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-sm table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>name</th>
+					<th>description</th>
+					<th>status</th>
+					<th>created_at</th>
+					<th>updated_at</th>					
+					<th class="table-col-tight text-center">
+						<button class="btn btn-light btn-sm">Add</button>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+			  {% for row in records %}
+				<tr>
+					<td>{{ row.id }}</td>
+					<td>{{ row.name }}</td>						
+					<td>{{ row.description }}</td>
+					<td>{{ row.status }}</td>
+					<td>{{ row.created_at }}</td>
+					<td>{{ row.updated_at }}</td>	
+					<td class="text-nowrap p-0 d-flex gap-1">
+						<button class="btn btn-light btn-sm small-btn">Update</button>
+						<button class="btn btn-light btn-sm small-btn">Delete</button>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>	
+</div>
+
+<div class="card shadow-lg p-4 mb-3">
+<pre><code>CREATE TABLE "stock_items_uom" (
+  "id"	INTEGER,
+  "name"	TEXT NOT NULL UNIQUE,
+  "description"	TEXT,
+  "status"	INTEGER DEFAULT 1,
+  "created_at"	DATETIME DEFAULT CURRENT_TIMESTAMP,
+  "updated_at"	DATETIME DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY("id" AUTOINCREMENT)
+);</code></pre>
+
+<h3>{{ title }}</h3>
+<p>
+{{ welcome_message }}.
+This guide does not require creating a new database file. The SQLite database is already provided in the repository along with sample data. This guide is only for displaying the schema and reading data.
+</p>
+ </div>
+ {% endblock %}

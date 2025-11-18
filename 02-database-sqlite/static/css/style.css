@@ -1,0 +1,161 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+/* Global body */
+body {
+  font-family: "Neucha", Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  color: #222;
+  background-color: #fff;
+  padding-top: 50px;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
+
+/* Tables, buttons, selects, labels */
+table, table td, table th, button, select, select option, label {
+  font-family: "Neucha", Arial, Helvetica, sans-serif;
+  font-size: 1.12rem;
+  line-height: 1.55;
+  font-weight: 400;
+  color: #333;
+}
+
+/* Cards */
+.card {
+  max-width: 100%;
+  width: 1280px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+/* Buttons */
+.btn-sm {
+  min-width: 80px;
+}
+
+/* Small buttons for tight cells */
+.small-btn {
+  padding: 0.25rem 0.5rem; /* a bit more padding */
+  min-width: auto;         /* keep flexible width */
+  font-size: 0.9rem;       /* slightly bigger text */
+}
+
+
+/* Table responsiveness */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Shrink default table cell padding */
+.table td,
+.table th {
+  padding: 0.25rem 0.4rem;
+}
+
+/* Preformatted code blocks */
+pre {
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+  color: #3b3a38;
+  background-color: #faf7f2;
+
+  /* uneven but soft borders */
+  border-top: 1px solid #d8d3cc;
+  border-left: 1px solid #d8d3cc;
+  border-right: 1px solid #e5e1db;
+  border-bottom: 1px solid #e5e1db;
+
+  border-radius: 4px;
+  padding: 1em;
+  line-height: 1.5;
+  overflow-x: auto;
+
+  /* reduced shadow */
+  box-shadow: 1px 1px 0px #edeae6;
+
+  white-space: pre;
+  word-wrap: break-word;
+}
+
+pre code {
+  color: #3b3a38;
+  background: transparent;
+  font-size: inherit;
+  padding: 0;
+  display: block;
+  white-space: pre;
+}
+
+.table-col-tight {
+  width: 1%;
+  white-space: nowrap; /* prevents wrapping */
+}
+
+/* Footer sticky + centered */
+
+html, body {
+  height: 100%;
+}
+
+body.d-flex.flex-column {
+  min-height: 100vh; /* ensure footer mt-auto pushes to bottom */
+}
+
+/* Make body a flex column so footer sticks bottom */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer container */
+footer.attribution {
+    margin-top: auto;           /* push footer to bottom */
+    width: 800px;               /* your desired width */
+    max-width: 100%;            /* responsive on mobile */
+    text-align: center;
+    align-self: center;         /* center horizontally */
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+}
+
+/* Footer text spacing */
+footer.attribution p {
+    margin: 0;
+}
+
+footer.attribution p {
+  font-size: 1.15rem;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .card {
+    padding: 15px;
+  }
+
+  h3, h4 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .btn-sm {
+    min-width: 70px;
+    font-size: 0.9rem;
+  }
+}
