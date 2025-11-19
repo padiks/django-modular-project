@@ -140,6 +140,14 @@ footer.attribution p {
   font-size: 1.15rem;
 }
 
+.custom-outline {
+  outline: 1px solid lightgray!important; 
+}
+
+.custom-outline:hover {
+    background-color: #f0f0f0 !important;  /* Very light gray */
+}
+
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
   .card {
