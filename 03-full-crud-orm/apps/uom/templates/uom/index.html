@@ -15,9 +15,9 @@
             {% for table in tables %}
                 <option value="{{ table }}" {% if table == 'stock_items_uom' %}selected{% endif %}>{{ table }}</option>
             {% endfor %}
-        </select>
-
-        <a href="{% url 'uom:add' %}" class="btn btn-success btn-sm">Add</a>
+        </select>				
+        <a href="{% url 'admin:index' %}" class="btn btn-white btn-sm custom-outline" target="_blank">Admin</a>
+        <a href="{% url 'uom:add' %}" class="btn btn-success btn-sm" style="position: absolute; right: 25px;">Add</a>
     </div>
 
     <!-- Table with UOM records -->
