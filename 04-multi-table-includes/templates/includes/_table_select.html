@@ -1,0 +1,22 @@
+<select class="form-select form-select-sm" id="tableSelect" style="width: auto; min-width: 150px;">
+    {% for table in tables %}
+        <option value="{{ table }}" {% if table == current_table %}selected{% endif %}>
+            {{ table }}
+        </option>
+    {% endfor %}
+</select>
+
+<a href="{% url 'admin:index' %}" class="btn btn-white btn-sm custom-outline" target="_blank">Admin</a>
+
+<script>
+document.getElementById('tableSelect').addEventListener('change', function() {
+    const selectedTable = this.value;
+
+    if (selectedTable === 'stock_items_categories') {
+        window.location.href = '/categories/';
+    } else if (selectedTable === 'stock_items_uom') {
+        window.location.href = '/';  // home/UOM page
+    }
+    // Add more mappings here if needed for other tables
+});
+</script>
