@@ -33,7 +33,7 @@ dstock/
 │   │       └── uom/
 │   │           └── index.html             # App-level template
 │   │
-│   ├── categories/                               # Module 2: Categories
+│   ├── categories/                        # Module 2: Categories
 │   │   ├── __init__.py
 │   │   ├── admin.py
 │   │   ├── apps.py
