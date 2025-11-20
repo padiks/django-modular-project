@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'apps.uom',
     'apps.categories',
     'apps.doctype',
-    'apps.items',		
+    'apps.items',
+    'apps.compute',		
     'debug_toolbar',
 ]
 

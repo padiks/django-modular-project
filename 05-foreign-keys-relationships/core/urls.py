@@ -8,7 +8,8 @@ urlpatterns = [
     path('', include('apps.uom.urls')),  # Home app
     path('categories/', include('apps.categories.urls')),
     path('doctype/', include('apps.doctype.urls')),
-    path('items/', include('apps.items.urls')),		
+    path('items/', include('apps.items.urls')),
+    path('compute/', include('apps.compute.urls')),		
 ]
 
 # Debug Toolbar URLs only if DEBUG=True

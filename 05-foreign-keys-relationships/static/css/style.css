@@ -148,6 +148,10 @@ footer.attribution p {
     background-color: #f0f0f0 !important;  /* Very light gray */
 }
 
+a.ln {
+	text-decoration: none;
+}
+
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
   .card {
