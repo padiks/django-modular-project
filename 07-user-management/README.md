@@ -89,16 +89,19 @@ u.save()
 ```python
 from django.contrib import admin
 from django.contrib.auth.models import User
+from django.contrib.auth.admin import UserAdmin   # <-- IMPORTANT
 
-class CustomUserAdmin(admin.ModelAdmin):
-    # Display key fields to easily distinguish admins vs normal users
+class CustomUserAdmin(UserAdmin):
+    # Display key fields to distinguish admins vs users
     list_display = ('username', 'email', 'is_staff', 'is_superuser', 'is_active')
     list_filter = ('is_staff', 'is_superuser', 'is_active', 'groups')
     search_fields = ('username', 'email')
 
+
 # Unregister default User admin
 admin.site.unregister(User)
-# Register custom admin
+
+# Register custom admin that still includes password change + profile
 admin.site.register(User, CustomUserAdmin)
 ```
 
@@ -316,3 +319,4 @@ def has_module_permission(self, request):
 | Edit UOM            | ✅ Yes  | ❌ Read-only |
 | Access Django Admin | ✅ Yes  | ✅ Yes       |
 | Role handled by     | Groups | Groups      |
+
