@@ -80,7 +80,7 @@ This means **every guide folder already contains all features, files, and improv
 
 ## 🚀 **How to Run**
 
-Minimal requirements (already tested on **Windows 7**, **Windows 10**, **Debian**):
+Minimal requirements (already tested on **Windows** and **Debian**):
 
 ```
 asgiref==3.10.0
