@@ -315,10 +315,17 @@ Got it! Here's how we can integrate that into the guide:
 
 Once you add the following code to your `admin.py`, you can log into the Django admin interface at `http://localhost:8000/admin` and easily manage your `StockItemUOM` records. The project already includes a sample SQLite database with tables and data, so you don’t need to worry about setting up the database.
 
-To log into the Django admin interface, use the following credentials:
+To access the Django admin interface, use one of the following accounts:
 
-* **Username:** `user`
-* **Password:** `q`
+* **User account:**
+
+  * **Username:** `user`
+  * **Password:** `q`
+
+* **Admin account:**
+
+  * **Username:** `admin`
+  * **Password:** `root`
 
 ### `apps/uom/admin.py`
 
@@ -347,3 +354,4 @@ admin.site.register(StockItemUOM, StockItemUOMAdmin)
 Once you've added this to your `admin.py`, head over to `http://localhost:8000/admin` in your browser, log in with the provided credentials, and start managing your `StockItemUOM` records right from the admin panel.
 
 This is entirely optional, but it can save time when working with large datasets!
+
