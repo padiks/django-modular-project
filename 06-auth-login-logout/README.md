@@ -4,10 +4,12 @@ This guide explains how to **add user authentication** (login + logout) to your 
 You will build a simple login form, protect pages using the `@login_required` decorator, and enable logout functionality.
 
 > **📌 Note:**
-> The repository already includes **`db.sqlite3`** with sample tables and data.
-> You can log in using:
-> **Username:** `user`
-> **Password:** `demo`
+>The repository includes a **sample SQLite database (`db.sqlite3`)** with preloaded tables and test data.
+
+Available login credentials:
+
+* **User account:** `user` / `demo`
+* **Admin account:** `admin` / `root`
 
 By the end of this guide, you will be able to:
 
@@ -273,4 +275,5 @@ You now have:
 * ✔ Protected views using `@login_required`
 * ✔ Smooth integration with your current project
 * ✔ No migrations needed — purely Django built-in auth
+
 
