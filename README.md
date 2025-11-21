@@ -27,6 +27,7 @@ project_folder/
 │   │   ├── urls.py
 │   │   ├── views.py
 │   │   ├── forms.py
+│   │   ├── templates/uom/form.html
 │   │   └── templates/uom/index.html
 │   │
 │   ├── items/                             # Items (CRUD + FK examples)
@@ -35,6 +36,7 @@ project_folder/
 │   │   ├── urls.py
 │   │   ├── views.py
 │   │   ├── forms.py
+│   │   ├── templates/items/form.html
 │   │   └── templates/items/index.html
 │   │
 │   └── users/                             # Authentication (login/logout)
