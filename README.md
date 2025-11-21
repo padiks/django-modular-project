@@ -12,15 +12,6 @@ Available login credentials:
 
 ---
 
-If you want, I can also make a slightly more polished version suitable for a README with better formatting. Do you want me to do that?
-
-
----
-
-If you want, I can also make a slightly more polished version suitable for a README with better formatting. Do you want me to do that?
-
----
-
 ## 🧩 **Project Structure (Modular Django)**
 
 ```
@@ -187,3 +178,4 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
