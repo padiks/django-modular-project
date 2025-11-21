@@ -320,7 +320,7 @@ To access the Django admin interface, use one of the following accounts:
 * **User account:**
 
   * **Username:** `user`
-  * **Password:** `q`
+  * **Password:** `demo`
 
 * **Admin account:**
 
@@ -354,4 +354,5 @@ admin.site.register(StockItemUOM, StockItemUOMAdmin)
 Once you've added this to your `admin.py`, head over to `http://localhost:8000/admin` in your browser, log in with the provided credentials, and start managing your `StockItemUOM` records right from the admin panel.
 
 This is entirely optional, but it can save time when working with large datasets!
+
 
