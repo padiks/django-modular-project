@@ -331,5 +331,5 @@ urlpatterns = [
 * **Timestamps** `created_at` and `updated_at` automatically set
 * **Category** and **UOM** names displayed in the table
 * Reused the **partial template** `_table_select.html` for table selection
-* Add, Update, Delete actions work seamlessly
 * **No migrations required**—working with an existing SQLite database
+
