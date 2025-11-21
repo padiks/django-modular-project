@@ -1,7 +1,7 @@
 # **DB Pilot – Django Modular Project**
 
 **DB Pilot** is a lightweight, modular **Django** application demonstrating complete **CRUD** operations using **SQLite**.
-It is designed as a **step-by-step learning project** showing how to build scalable Django apps with a clean, modular architecture.
+It is designed as a **step-by-step learning project**, showing how to build scalable Django apps with a clean, modular architecture.
 
 The repository includes a **sample SQLite database (`db.sqlite3`)** with tables and test data ready to use.
 Use **username:** `user` & **password:** `q` to log in.
@@ -73,8 +73,8 @@ The project includes **6 modular guides**, each a self-contained working project
 | **05 — Foreign Keys**         | Items linked to UOM (relationships). |
 | **06 — Authentication**       | Login & logout using Django Auth.    |
 
-Each guide is a **fully working project**, and **each one continues from the previous guide**.
-This means **every guide folder already contains all features, files, and improvements from the earlier guides** — so you can download **any guide** and run it instantly.
+Each guide is a **fully working project** and **continues from the previous guide**.
+This means **every guide folder already includes all features, files, and improvements from the earlier guides**, so you can download **any guide** and run it instantly.
 
 ---
 
@@ -89,18 +89,61 @@ django-debug-toolbar==6.1.0
 sqlparse==0.5.3
 ```
 
-### Start the server
+---
 
-```
+### Start the Server
+
+Install dependencies and run the project:
+
+```bash
 pip install -r requirements.txt
 python manage.py runserver
 ```
 
-✔ No migrations required — the included `db.sqlite3` already contains:
+✔ **No migrations required** — the included `db.sqlite3` already contains:
 
 * UOM, Categories, Doctype, Items, Users sample data
 * Items with foreign keys
 * Test user account
+
+---
+
+### Running the Project from GitHub
+
+You can also download the project directly from GitHub and run it easily:
+
+```bash
+# Clone the repository
+git clone https://github.com/padiks/django-modular-project.git
+
+# Go into the project folder
+cd django-modular-project
+cd 06-auth-login-logout
+
+# Create a virtual environment
+python3 -m venv venv
+source venv/bin/activate       # Linux / macOS
+# For Windows PowerShell use: venv\Scripts\Activate.ps1
+# For Windows CMD use: venv\Scripts\activate.bat
+
+# Upgrade pip and install required packages
+pip install --upgrade pip
+pip install Django django-debug-toolbar
+
+# Run the development server
+python manage.py runserver
+```
+
+You should see output similar to:
+
+```
+System check identified no issues (0 silenced).
+Django version 5.2.8, using settings 'core.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+```
+
+---
 
 ### Test Login
 
