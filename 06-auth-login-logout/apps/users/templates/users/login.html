@@ -1,0 +1,47 @@
+<!-- /home/user/Public/web/dbpilot/apps/users/templates/users -->
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="card shadow-lg p-4 mb-3" style="max-width: 450px; margin: 0 auto;">
+
+    <h4 class="mb-4 text-center">Login</h4>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger py-2">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input
+                type="text"
+                name="username"
+                class="form-control"
+                required
+                autofocus
+            >
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input
+                type="password"
+                name="password"
+                class="form-control"
+                required
+            >
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">
+            Login
+        </button>
+    </form>
+
+</div>
+{% endblock %}
