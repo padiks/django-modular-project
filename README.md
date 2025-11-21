@@ -3,8 +3,21 @@
 **DB Pilot** is a lightweight, modular **Django** application demonstrating complete **CRUD** operations using **SQLite**.
 It is designed as a **step-by-step learning project**, showing how to build scalable Django apps with a clean, modular architecture.
 
-The repository includes a **sample SQLite database (`db.sqlite3`)** with tables and test data ready to use.
-Use **username:** `user` & **password:** `q` to log in.
+The repository includes a **sample SQLite database (`db.sqlite3`)** with preloaded tables and test data.
+
+Available login credentials:
+
+* **User account:** `user` / `demo`
+* **Admin account:** `admin` / `root`
+
+---
+
+If you want, I can also make a slightly more polished version suitable for a README with better formatting. Do you want me to do that?
+
+
+---
+
+If you want, I can also make a slightly more polished version suitable for a README with better formatting. Do you want me to do that?
 
 ---
 
@@ -150,7 +163,10 @@ Quit the server with CONTROL-C.
 ### Test Login
 
 * **username:** `user`
-* **password:** `q`
+* **password:** `demo`
+
+* **username:** `admin`
+* **password:** `root`
 
 ---
 
