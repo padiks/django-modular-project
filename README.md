@@ -33,7 +33,7 @@ dstock/
 │   │       └── uom/
 │   │           └── index.html             # App-level template
 │   │
-│   ├── categories/                        # Module 2: Categories
+│   ├── <other-modules - items, etc>/      # Module 2: Categories
 │   │   ├── __init__.py
 │   │   ├── admin.py
 │   │   ├── apps.py
@@ -72,7 +72,7 @@ dstock/
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `manage.py`                         | Django uses `manage.py` for project initialization and running commands.                                                                                                  |
 | `settings.py`                       | Contains all configurations for the environment, database, paths, etc.                                                                                                    |
-| `apps/`                             | Modular structure where each app (e.g., `uom`, `products`) has its own models, views, and routes.                                                                         |
+| `apps/`                             | Modular structure where each app (e.g., `uom`, `items`) has its own models, views, and routes.                                                                         |
 | `urls.py`                           | Defines routes (URLs) and maps them to specific views.                                                                                                                    |
 | `views.py`                          | Contains the view functions that handle requests and return responses.                                                                                                    |
 | `apps/utils/`                       | Shared utility functions, just like reusable modules.                                                                                                                     |
