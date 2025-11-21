@@ -7,7 +7,7 @@ You will build a simple login form, protect pages using the `@login_required` de
 > The repository already includes **`db.sqlite3`** with sample tables and data.
 > You can log in using:
 > **Username:** `user`
-> **Password:** `q`
+> **Password:** `demo`
 
 By the end of this guide, you will be able to:
 
@@ -273,3 +273,4 @@ You now have:
 * ✔ Protected views using `@login_required`
 * ✔ Smooth integration with your current project
 * ✔ No migrations needed — purely Django built-in auth
+
