@@ -1,88 +1,126 @@
-# DB Pilot - Django Modular Project
+# **DB Pilot – Django Modular Project**
 
-**DB Pilot** is a lightweight, modular **Django** application that demonstrates complete **CRUD (Create, Read, Update, Delete)** operations using an **SQLite** database. It’s designed as a learning project for building modular Django apps.
+**DB Pilot** is a lightweight, modular **Django** application demonstrating complete **CRUD** operations using **SQLite**.
+It is designed as a **step-by-step learning project** showing how to build scalable Django apps with a clean, modular architecture.
+
+The repository includes a **sample SQLite database (`db.sqlite3`)** with tables and test data ready to use.
+Use **username:** `user` & **password:** `q` to log in.
 
 ---
 
-### 🌱 Django Modular Project Structure
+## 🧩 **Project Structure (Modular Django)**
 
 ```
-dstock/
-├── manage.py                              # Django management entrypoint
+project_folder/
+├── manage.py
 │
-├── core/                                  # Project core (settings, URLs, WSGI)
-│   ├── __init__.py
-│   ├── settings.py                        # Optional for centralized settings (DB, paths, debug, apps)
-│   ├── urls.py                            # Root URL router, includes app-level URLs
-│   ├── wsgi.py                            # Optional for WSGI entrypoint for Apache/mod_wsgi
-│   └── asgi.py                            # Optional for async support (future-proof)
+├── core/                                  # Core project config
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── asgi.py
 │
-├── apps/                                  # Your modular app collection
-│   ├── __init__.py
-│   │
-│   ├── uom/                               # Module 1: Units of Measure
-│   │   ├── __init__.py
-│   │   ├── admin.py                       # Optional Admin registration
-│   │   ├── apps.py                        # Django app config
-│   │   ├── models.py                      # Models (tables)
-│   │   ├── urls.py                        # App-specific routes
-│   │   ├── views.py                       # Views (controllers)
-│   │   ├── forms.py                       # Optional (forms for CRUD)
-│   │   ├── tests.py                       # Optional tests
-│   │   └── templates/
-│   │       └── uom/
-│   │           └── index.html             # App-level template
-│   │
-│   ├── <other-modules - items, etc>/      # Module 2: Categories
-│   │   ├── __init__.py
-│   │   ├── admin.py
+├── apps/
+│   ├── uom/                               # Units of Measure (CRUD)
 │   │   ├── apps.py
 │   │   ├── models.py
 │   │   ├── urls.py
 │   │   ├── views.py
-│   │   └── templates/
-│   │       └── categories/
-│   │           └── index.html
+│   │   ├── forms.py
+│   │   └── templates/uom/index.html
 │   │
-│   └── utils/                             # Optional for shared helpers (non-model logic)
-│       ├── __init__.py
-│       └── helpers.py                     # Optional for Markdown rendering, formatting, etc.
+│   ├── items/                             # Items (CRUD + FK examples)
+│   │   ├── apps.py
+│   │   ├── models.py
+│   │   ├── urls.py
+│   │   ├── views.py
+│   │   ├── forms.py
+│   │   └── templates/items/index.html
+│   │
+│   └── users/                             # Authentication (login/logout)
+│       ├── apps.py
+│       ├── urls.py
+│       ├── views.py
+│       └── templates/users/login.html
 │
-├── templates/                             # Global templates shared across all apps
-│   ├── base.html                          # Base layout (extends in all app templates)
-│   ├── 404.html                           # Optional: custom error page
-│   └── includes/                          # Optional for reusable template parts (header/footer)
-│       ├── header.html
-│       └── footer.html
+├── templates/
+│   ├── base.html
+│   └── includes/
+│       └── _table_select.html
 │
-├── static/                                # Shared static files (CSS/JS/Images)
-│   ├── css/
-│   │   └── style.css
-│   └── img/
-│       └── favicon.png
+├── static/
+│   ├── css/style.css
+│   └── img/favicon.png
 │
-└── db.sqlite3                             # SQLite database
+└── db.sqlite3
 ```
 
----
-
-### ⚙️ Highlights
-
-| **Django Concept**                  | **Notes**                                                                                                                                                                 |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `manage.py`                         | Django uses `manage.py` for project initialization and running commands.                                                                                                  |
-| `settings.py`                       | Contains all configurations for the environment, database, paths, etc.                                                                                                    |
-| `apps/`                             | Modular structure where each app (e.g., `uom`, `items`) has its own models, views, and routes.                                                                         |
-| `urls.py`                           | Defines routes (URLs) and maps them to specific views.                                                                                                                    |
-| `views.py`                          | Contains the view functions that handle requests and return responses.                                                                                                    |
-| `apps/utils/`                       | Shared utility functions, just like reusable modules.                                                                                                                     |
-| `apps/<module>/templates/<module>/` | Templates specific to each app are stored in the `templates` folder inside the app directory.                                                                             |
-| `templates/`                        | Global templates like `base.html`, `404.html`, etc., that are shared across the project.                                                                                  |
-| `static/`                           | Contains static files (CSS, JavaScript, images) accessible by the browser.                                                                                                |
-| `db.sqlite3`                        | The project includes a sample SQLite database file (`db.sqlite3`) with pre-populated tables and data. Point to this file in `DATABASES['default']['NAME']` configuration. |
+> Only the main modules (*uom*, *items*, *users*) are shown.
+> Additional modules exist in earlier guide folders.
 
 ---
 
-### License
+## 📘 **Included Learning Guides**
 
-This project is intended for learning purposes.
+The project includes **6 modular guides**, each a self-contained working project:
+
+| Guide                         | Description                          |
+| ----------------------------- | ------------------------------------ |
+| **01 — Base Template**        | Bootstrap layout, global includes.   |
+| **02 — SQLite Database**      | Database config + first tables.      |
+| **03 — Full CRUD (ORM)**      | Create, Read, Update, Delete.        |
+| **04 — Multi-Table Includes** | Rendering multiple tables modularly. |
+| **05 — Foreign Keys**         | Items linked to UOM (relationships). |
+| **06 — Authentication**       | Login & logout using Django Auth.    |
+
+Each guide runs independently — download any folder and start instantly.
+
+---
+
+## 🚀 **How to Run**
+
+Minimal requirements (already tested on **Windows 7**, **Windows 10**, **Debian**):
+
+```
+asgiref==3.10.0
+Django==5.2.8
+django-debug-toolbar==6.1.0
+sqlparse==0.5.3
+```
+
+### Start the server
+
+```
+pip install -r requirements.txt
+python manage.py runserver
+```
+
+✔ No migrations required — the included `db.sqlite3` already contains:
+
+* UOM, Categories, Doctype, Items, Users sample data
+* Items with foreign keys
+* Test user account
+
+### Test Login
+
+* **username:** `user`
+* **password:** `q`
+
+---
+
+## 🏗️ **Features**
+
+* Modular Django Architecture (copy → rename → new app)
+* Bootstrap UI with reusable includes
+* Full CRUD using Django ORM
+* Clean foreign key examples (Items → UOM)
+* Login/Logout using Django Auth
+* Preloaded sample data
+* Easy to extend and scale with new modules
+
+---
+
+## 📄 License
+
+This project is for **learning and educational use**.
+Feel free to explore, extend, and build upon it.
