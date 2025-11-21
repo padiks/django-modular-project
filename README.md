@@ -73,7 +73,8 @@ The project includes **6 modular guides**, each a self-contained working project
 | **05 — Foreign Keys**         | Items linked to UOM (relationships). |
 | **06 — Authentication**       | Login & logout using Django Auth.    |
 
-Each guide runs independently — download any folder and start instantly.
+Each guide is a **fully working project**, and **each one continues from the previous guide**.
+This means **every guide folder already contains all features, files, and improvements from the earlier guides** — so you can download **any guide** and run it instantly.
 
 ---
 
