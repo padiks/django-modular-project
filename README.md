@@ -160,6 +160,7 @@ Quit the server with CONTROL-C.
 * Clean foreign key examples (Items → UOM)
 * Login/Logout using Django Auth
 * Preloaded sample data
+* Debug toolbar **already integrated** (can be easily removed if needed)
 * Easy to extend and scale with new modules
 
 ---
