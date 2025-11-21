@@ -1,4 +1,4 @@
-# apps/users/views.py - 4
+# apps/users/views.py
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages

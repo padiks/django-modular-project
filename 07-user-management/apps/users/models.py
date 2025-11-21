@@ -1,1 +1,1 @@
-# apps/<app-name>/models.py
+# apps/users/models.py
