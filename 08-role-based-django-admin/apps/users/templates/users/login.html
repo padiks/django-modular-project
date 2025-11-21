@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="card shadow-lg p-4 mb-3" style="max-width: 450px; margin: 0 auto;">
+
+    <h4 class="mb-4 text-center">Login</h4>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger py-2">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input
+                type="text"
+                name="username"
+                class="form-control"
+                value="user"
+                required
+                autofocus
+            >
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input
+                type="password"
+                name="password"
+                class="form-control"
+                value="demo"
+                required
+            >
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">
+            Login
+        </button>
+    </form>
+
+    <!-- Credentials for guide -->
+    <div class="mt-4 p-3 border rounded bg-light">
+        <strong>Available login credentials:</strong>
+        <ul class="mb-0">
+            <li><strong>User account:</strong> <code>user</code> / <code>demo</code></li>
+            <li><strong>Admin account:</strong> <code>admin</code> / <code>root</code></li>
+        </ul>
+    </div>
+
+</div>
+{% endblock %}
