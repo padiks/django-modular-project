@@ -12,6 +12,12 @@ Available login credentials:
 
 ---
 
+You can **check the running project online** at: [https://padiks.pythonanywhere.com](https://padiks.pythonanywhere.com) ✅
+
+This live demo lets you **explore all modules**, test CRUD operations, and see role-based access in action without needing to set up anything locally.
+
+---
+
 ## 🧩 **Project Structure (Modular Django)**
 
 ```
@@ -177,6 +183,7 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
 
 
