@@ -18,47 +18,52 @@ Available login credentials:
 project_folder/
 ├── manage.py
 │
-├── core/                                  # Core project config
+├── core/                                  # Core Django settings & URL configuration
 │   ├── settings.py
-│   ├── urls.py
-│   ├── wsgi.py
-│   └── asgi.py
+│   └── urls.py
 │
-├── apps/
-│   ├── uom/                               # Units of Measure (CRUD)
+├── apps/                                  # Modular Django apps
+│   ├── uom/                               # Units of Measure app (CRUD)
 │   │   ├── apps.py
 │   │   ├── models.py
 │   │   ├── urls.py
 │   │   ├── views.py
 │   │   ├── forms.py
-│   │   ├── templates/uom/form.html
-│   │   └── templates/uom/index.html
+│   │   └── templates/uom/
+│   │        ├── index.html
+│   │        └── form.html
 │   │
-│   ├── items/                             # Items (CRUD + FK examples)
+│   ├── items/                             # Items app (CRUD + ForeignKey examples)
 │   │   ├── apps.py
 │   │   ├── models.py
 │   │   ├── urls.py
 │   │   ├── views.py
 │   │   ├── forms.py
-│   │   ├── templates/items/form.html
-│   │   └── templates/items/index.html
+│   │   └── templates/items/
+│   │        ├── index.html
+│   │        └── form.html
 │   │
-│   └── users/                             # Authentication (login/logout)
+│   ├── <other-modules>/                   # Placeholder for additional apps/modules
+│   │
+│   └── users/                             # Authentication & role-based access
 │       ├── apps.py
 │       ├── urls.py
 │       ├── views.py
+│       ├── templatetags/group_filters.py  # Custom template filters for user groups
 │       └── templates/users/login.html
 │
-├── templates/
-│   ├── base.html
-│   └── includes/
-│       └── _table_select.html
+├── templates/                             # Project-wide templates
+│   ├── base.html                          # Main layout for all pages
+│   ├── admin/base_site.html               # Custom Django admin layout
+│   └── includes/                          # Reusable partial templates
+│       ├── _table_select.html
+│       └── footer.html
 │
-├── static/
+├── static/                                # Static files (CSS, images)
 │   ├── css/style.css
 │   └── img/favicon.png
 │
-└── db.sqlite3
+└── db.sqlite3                             # SQLite database
 ```
 
 > Only the main modules (*uom*, *items*, *users*) are shown.
@@ -172,6 +177,7 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
 
 
