@@ -79,7 +79,7 @@ The project includes **10 modular guides**, each a self-contained working projec
 | **04 — Multi-Table Includes**                  | Rendering multiple tables modularly.                                                                         |
 | **05 — Foreign Keys**                          | Items linked to UOM (relationships).                                                                         |
 | **06 — Authentication**                        | Login & logout using Django Auth.                                                                            |
-| **07 — User Management & Admin Customization** | Manage users and superusers, use Groups for roles, customize admin panel, control table visibility per role. |
+| **07 — User Management**                       | Manage users and superusers, use Groups for roles, customize admin panel, control table visibility per role. |
 | **08 — Role-Based Admin**                      | Admin panel with advanced role-based access.                                                                 |
 | **09 — Role-Based CRUD Module**                | CRUD operations restricted by user roles.                                                                    |
 | **10 — DataTables Integration**                | Dynamic tables with search, sort, and pagination.                                                            |
@@ -174,4 +174,5 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
