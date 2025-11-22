@@ -29,16 +29,6 @@ project_folder/
 │   └── urls.py
 │
 ├── apps/                                  # Modular Django apps
-│   ├── uom/                               # Units of Measure app (CRUD)
-│   │   ├── apps.py
-│   │   ├── models.py
-│   │   ├── urls.py
-│   │   ├── views.py
-│   │   ├── forms.py
-│   │   └── templates/uom/
-│   │        ├── index.html
-│   │        └── form.html
-│   │
 │   ├── items/                             # Items app (CRUD + ForeignKey examples)
 │   │   ├── apps.py
 │   │   ├── models.py
@@ -184,3 +174,4 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
