@@ -93,6 +93,7 @@ The project includes **10 modular guides**, each a self-contained working projec
 | **08 — Role-Based Admin**                      | Admin panel with advanced role-based access.                                                                 |
 | **09 — Role-Based CRUD Module**                | CRUD operations restricted by user roles.                                                                    |
 | **10 — DataTables Integration**                | Dynamic tables with search, sort, and pagination.                                                            |
+| **11 — Stock Movements Module**                | Stock transactions and/or entries.                                                            |
 
 Each guide is a **fully working project** and **continues from the previous guide**.
 This means **every guide folder already includes all features, files, and improvements from the earlier guides**, so you can download **any guide** and run it instantly.
@@ -123,7 +124,7 @@ python manage.py runserver
 
 ✔ **No migrations required** — the included `db.sqlite3` already contains:
 
-* UOM, Categories, Doctype, Items, Users sample data
+* UOM, Categories, Doctype, Items, Users, Stock Movements sample data
 * Items with foreign keys
 * Test user account
 
@@ -139,7 +140,7 @@ git clone https://github.com/padiks/django-modular-project.git
 
 # Go into the project folder
 cd django-modular-project
-cd 06-auth-login-logout
+cd 11-stock-movements-module
 
 # Create a virtual environment
 python3 -m venv venv
@@ -183,8 +184,3 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
-
-
-
-
-
