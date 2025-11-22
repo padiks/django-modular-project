@@ -68,16 +68,20 @@ project_folder/
 
 ## 📘 **Included Learning Guides**
 
-The project includes **6 modular guides**, each a self-contained working project:
+The project includes **10 modular guides**, each a self-contained working project:
 
-| Guide                         | Description                          |
-| ----------------------------- | ------------------------------------ |
-| **01 — Base Template**        | Bootstrap layout, global includes.   |
-| **02 — SQLite Database**      | Database config + first tables.      |
-| **03 — Full CRUD (ORM)**      | Create, Read, Update, Delete.        |
-| **04 — Multi-Table Includes** | Rendering multiple tables modularly. |
-| **05 — Foreign Keys**         | Items linked to UOM (relationships). |
-| **06 — Authentication**       | Login & logout using Django Auth.    |
+| Guide                                          | Description                                                                                                  |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **01 — Base Template**                         | Bootstrap layout, global includes.                                                                           |
+| **02 — SQLite Database**                       | Database config + first tables.                                                                              |
+| **03 — Full CRUD (ORM)**                       | Create, Read, Update, Delete.                                                                                |
+| **04 — Multi-Table Includes**                  | Rendering multiple tables modularly.                                                                         |
+| **05 — Foreign Keys**                          | Items linked to UOM (relationships).                                                                         |
+| **06 — Authentication**                        | Login & logout using Django Auth.                                                                            |
+| **07 — User Management & Admin Customization** | Manage users and superusers, use Groups for roles, customize admin panel, control table visibility per role. |
+| **08 — Role-Based Admin**                      | Admin panel with advanced role-based access.                                                                 |
+| **09 — Role-Based CRUD Module**                | CRUD operations restricted by user roles.                                                                    |
+| **10 — DataTables Integration**                | Dynamic tables with search, sort, and pagination.                                                            |
 
 Each guide is a **fully working project** and **continues from the previous guide**.
 This means **every guide folder already includes all features, files, and improvements from the earlier guides**, so you can download **any guide** and run it instantly.
@@ -168,5 +172,6 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
 
