@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="card shadow-lg p-4 mb-3">
+
+    <h4 class="mb-4 text-center">{{ title }}</h4>
+
+    <div class="mb-3 d-flex flex-wrap align-items-center gap-2">
+        <label for="tableSelect" class="form-label mb-0">Table:</label>
+        {% include 'includes/_table_select.html' %}
+
+        {% if user_group == 'Admin' %}
+            <a href="{% url 'movements:add_record' %}" class="btn btn-success btn-sm" style="position: absolute; right: 25px;">Add Movement</a>
+        {% else %}
+            <a href="#" class="btn btn-success btn-sm disabled" style="position: absolute; right: 25px;" title="View Only">Add Movement</a>
+        {% endif %}
+    </div>
+
+    <div class="table-responsive">
+        <table id="itemsTable" class="table table-sm table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Doc Type</th>
+                    <th>Number</th>
+                    <th>Item</th>
+                    <th>Qty</th>
+                    <th>Reference</th>
+                    <th>Status</th>
+                    <th>Updated</th>
+                    <th width="120">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in records %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.movement_date|date:"d/m/Y" }}</td>
+                    <td>{{ row.document_type.name }}</td>
+                    <td>{{ row.document_number }}</td>
+                    <td>{{ row.item.code }} - {{ row.item.description }}</td>
+                    <td>{{ row.quantity }}</td>
+                    <td>{{ row.document_reference }}</td>
+                    <td>
+                        {% if row.status == 1 %}
+                            <span class="badge bg-success">{{ row.get_status_display }}</span>
+                        {% else %}
+                            <span class="badge bg-secondary">{{ row.get_status_display }}</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ row.updated_at|date:"d M. Y, g:i a" }}</td>
+
+                    <td class="text-nowrap d-flex gap-1">
+                        {% if user_group == 'Admin' %}
+                            <a href="{% url 'movements:update_record' row.id %}" class="btn btn-light btn-sm">Update</a>
+                            <a href="{% url 'movements:delete_record' row.id %}" onclick="return confirm('Delete this record?')" class="btn btn-light btn-sm">Delete</a>
+                        {% else %}
+                            <a href="#" class="btn btn-light btn-sm disabled" title="View Only">Update</a>
+                            <a href="#" class="btn btn-light btn-sm disabled" title="View Only">Delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+{% endblock %}
