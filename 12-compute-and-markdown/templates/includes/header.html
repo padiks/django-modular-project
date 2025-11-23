@@ -1,0 +1,24 @@
+<header>
+	<nav class="navbar navbar-expand-lg shadow-sm rounded-3" style="background-color: white; border: 1px solid #e0e0e0; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+		<div class="container-fluid">
+			<a class="navbar-brand fw-bold" href="{% url 'movements:index' %}" title="Django Modular Project">もじゅらー</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link fw-bold" title="Markdown" href="/markdown/guide-12/" target="_blank">まーくだうん</a>
+					</li>
+					<li class="nav-item">
+						{% if user.is_authenticated %}
+							<a class="nav-link fw-bold" title="Logout" href="{% url 'logout' %}">ろぐあうと</a>
+						{% else %}
+							<a class="nav-link fw-bold" title="Login" href="{% url 'login' %}">ろぐいん</a>
+						{% endif %}
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>

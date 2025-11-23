@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Renderer</title>
+	<script>
+	  const svg = `
+	  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+	    <rect x="10" y="10" width="30" height="30" fill="#1e90ff"/>
+	    <rect x="60" y="10" width="30" height="30" fill="#ff6347"/>
+	    <circle cx="50" cy="70" r="20" fill="#32cd32"/>
+	  </svg>`;
+	  const svgBlob = new Blob([svg], {type: 'image/svg+xml'});
+	  const url = URL.createObjectURL(svgBlob);
+	  const link = document.createElement('link');
+	  link.rel = 'icon';
+	  link.href = url;
+	  document.head.appendChild(link);
+	</script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            width: 80%;
+            max-width: 960px; /* Optional: limits width on larger screens */
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+		hr {
+			width: 50%; /* Set the width to 50% */
+			margin: 20px auto; /* Center the line horizontally */
+			border: none; /* Remove default border */
+			height: 1px; /* Set height to 1px for a thin line */
+			background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2)); /* Fading effect */
+		}
+		pre {
+			background-color: #f5f5f5; /* light gray background */
+			padding: 12px 16px;
+			border-radius: 6px;
+			overflow-x: auto; /* horizontal scroll if really long lines */
+			white-space: pre-wrap; /* wrap lines */
+			word-wrap: break-word; /* wrap long words */
+			font-family: Consolas, Monaco, 'Courier New', monospace;
+			font-size: 14px;
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+		code {
+			background-color: #eee;
+			padding: 2px 4px;
+			border-radius: 4px;
+			font-family: Consolas, Monaco, 'Courier New', monospace;
+			font-size: 90%;
+		}
+		pre code {
+			display: block;
+		}
+        /* Optional: Make sure the markdown content is nicely formatted */
+        .markdown-content {
+            line-height: 1.6;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ title }}</h1>
+        <div class="markdown-content">
+            <!-- Render the markdown content here -->
+            {{ content|safe }}
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 
+TEMPLATE: templates/markdown_renderer.html
+DATA: static/markdown/guide-12.md
+URL: http://localhost:8000/markdown/guide-12/
+-->
