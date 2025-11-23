@@ -99,6 +99,7 @@ Minimal requirements (already tested on **Windows** and **Debian**):
 asgiref==3.10.0
 Django==5.2.8
 django-debug-toolbar==6.1.0
+Markdown==3.10
 sqlparse==0.5.3
 ```
 
@@ -141,7 +142,7 @@ source venv/bin/activate       # Linux / macOS
 
 # Upgrade pip and install required packages
 pip install --upgrade pip
-pip install Django django-debug-toolbar
+pip install Django django-debug-toolbar markdown
 
 # Run the development server
 python manage.py runserver
@@ -175,6 +176,7 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
 
 
