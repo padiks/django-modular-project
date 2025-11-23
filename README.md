@@ -83,7 +83,8 @@ The project includes **10 modular guides**, each a self-contained working projec
 | **08 — Role-Based Admin**                      | Admin panel with advanced role-based access.                                                                 |
 | **09 — Role-Based CRUD Module**                | CRUD operations restricted by user roles.                                                                    |
 | **10 — DataTables Integration**                | Dynamic tables with search, sort, and pagination.                                                            |
-| **11 — Stock Movements Module**                | Stock transactions and/or entries.                                                            |
+| **11 — Stock Movements Module**                | Manages and tracks stock transactions, including the movement of items and supporting stock-related entries. |
+| **12 — Compute Module & Markdown Renderer**    | Handles basic calculations (e.g., summation) and renders static markdown content into HTML.                  |
 
 Each guide is a **fully working project** and **continues from the previous guide**.
 This means **every guide folder already includes all features, files, and improvements from the earlier guides**, so you can download **any guide** and run it instantly.
@@ -174,6 +175,7 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
 
 
