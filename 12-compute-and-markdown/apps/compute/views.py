@@ -48,7 +48,7 @@ def summation(request):
                 sum_values = 'Invalid input. Please enter numeric values.'  # Handle non-numeric inputs
 
     return render(request, 'compute/summation.html', {
-        'title': 'Summation',
+        'title': 'Summation - Django-Based Calculation',
         'input1': input1,
         'input2': input2,
         'input3': input3,
