@@ -69,7 +69,7 @@ project_folder/
 
 ## 📘 **Included Learning Guides**
 
-The project includes **10 modular guides**, each a self-contained working project:
+The project includes **12 modular guides**, each a self-contained working project:
 
 | Guide                                          | Description                                                                                                  |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
@@ -176,6 +176,7 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
 
 
