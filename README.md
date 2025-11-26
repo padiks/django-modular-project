@@ -119,8 +119,6 @@ python manage.py runserver
 
 ✔ **No migrations required** — the included `db.sqlite3` already contains the necessary data and schema.
 
-If your guide might involve any future database changes (such as adding new models or altering existing ones), you could update that part to say something like:
-
 ✔ **Migrations might be required in the future** — If you modify models or the schema, run the following commands to apply changes:
 
 ```bash
@@ -184,6 +182,7 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
 
 
