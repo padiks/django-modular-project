@@ -85,6 +85,7 @@ The project includes **12 modular guides**, each a self-contained working projec
 | **10 — DataTables Integration**                | Dynamic tables with search, sort, and pagination.                                                            |
 | **11 — Stock Movements Module**                | Manages and tracks stock transactions, including the movement of items and supporting stock-related entries. |
 | **12 — Compute Module & Markdown Renderer**    | Handles basic calculations (e.g., summation) and renders static markdown content into HTML.                  |
+| **13 — Django Rest Framework (DRF)**           | Setting up a based API to manage data such as books.                                                         |
 
 Each guide is a **fully working project** and **continues from the previous guide**.
 This means **every guide folder already includes all features, files, and improvements from the earlier guides**, so you can download **any guide** and run it instantly.
@@ -132,7 +133,7 @@ git clone https://github.com/padiks/django-modular-project.git
 
 # Go into the project folder
 cd django-modular-project
-cd 11-stock-movements-module
+cd 13-rest-framework
 
 # Create a virtual environment
 python3 -m venv venv
@@ -142,7 +143,7 @@ source venv/bin/activate       # Linux / macOS
 
 # Upgrade pip and install required packages
 pip install --upgrade pip
-pip install Django django-debug-toolbar markdown
+pip install Django django-debug-toolbar markdown djangorestframework djangorestframework-simplejwt
 
 # Run the development server
 python manage.py runserver
@@ -176,6 +177,7 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
 
 
