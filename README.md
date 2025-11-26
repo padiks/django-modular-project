@@ -102,6 +102,8 @@ Django==5.2.8
 django-debug-toolbar==6.1.0
 Markdown==3.10
 sqlparse==0.5.3
+djangorestframework
+djangorestframework-simplejwt
 ```
 
 ---
@@ -177,6 +179,7 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
 
 
