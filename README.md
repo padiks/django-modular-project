@@ -62,7 +62,7 @@ project_folder/
 └── db.sqlite3                             # SQLite database
 ```
 
-> Only the main modules (*uom*, *items*, *users*) are shown.
+> Some modules (*items*, *users*) are shown.
 > Additional modules exist in earlier guide folders.
 
 ---
@@ -179,6 +179,7 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
 
 
