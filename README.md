@@ -139,7 +139,7 @@ git clone https://github.com/padiks/django-modular-project.git
 
 # Go into the project folder
 cd django-modular-project
-cd 13-rest-framework
+cd 14-rest-api-consumer
 
 # Create a virtual environment
 python3 -m venv venv
@@ -183,15 +183,3 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
-
-
-
-
-
-
-
-
-
-
-
-
