@@ -10,6 +10,10 @@
     {% if error %}
         <div class="alert alert-danger">{{ error }}</div>
     {% endif %}
+	
+    {% block nav %}
+        {% include 'includes/_compute_nav.html' %}
+    {% endblock %}	
 
     <div class="mb-3 d-flex flex-wrap align-items-center gap-2">
 		<a href="https://padiks.pythonanywhere.com/api/books/" 
