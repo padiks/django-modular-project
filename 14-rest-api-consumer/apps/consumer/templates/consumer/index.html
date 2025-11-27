@@ -1,0 +1,52 @@
+<!-- apps/consumer/templates/consumer/index.html -->
+{% extends 'base.html' %}
+
+{% block title %}{{ title }} - Rest API Consumer{% endblock %}
+
+{% block content %}
+<div class="card shadow-lg p-4 mb-3">
+    <h4 class="mb-4 text-center">{{ title }} - Rest API Consumer</h4>
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+
+    <div class="mb-3 d-flex flex-wrap align-items-center gap-2">
+		<a href="https://padiks.pythonanywhere.com/api/books/" 
+		   class="btn btn-success btn-sm" 
+		   style="position: absolute; right: 25px; margin-bottom:10px;" 
+		   title="Books List - Fetched from External API">
+		   Rest API Framework
+		</a>
+    </div>
+
+    <div class="table-responsive">
+        <table id="itemsTable" class="table table-sm table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Published Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if books %}
+                    {% for book in books %}
+                    <tr>
+                        <td>{{ book.id }}</td>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.author }}</td>
+                        <td>{{ book.published_date }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="4">No books available.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
