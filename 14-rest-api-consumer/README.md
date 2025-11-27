@@ -33,7 +33,6 @@ project_folder/
 │   │   ├── admin.py
 │   │   ├── apps.py
 │   │   ├── models.py            ← Optional if needed
-│   │   ├── serializers.py       ← Not needed in this guide, since we're only consuming data
 │   │   ├── views.py             ← Logic for fetching API data and rendering it
 │   │   └── urls.py              ← URLs for the consumer app
 │
@@ -213,3 +212,4 @@ Once everything is set up, you can visit the URL for the **consumer** app, typic
 In **Guide 14**, we covered how to set up a Django app to **consume data from an external API** using the **requests** library. By following the steps above, we were able to display the books fetched from the external API (`https://padiks.pythonanywhere.com/api/books/`) in a table on our site.
 
 You can easily extend this guide to consume other APIs, display more complex data, or implement error handling for various response scenarios.
+
