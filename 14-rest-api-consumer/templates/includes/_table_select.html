@@ -1,0 +1,13 @@
+<select class="form-select form-select-sm" id="tableSelect" style="width: auto; min-width: 150px;">
+    {% for table in tables %}
+        <option value="{{ table }}" {% if table == current_table %}selected{% endif %}>
+            {{ table }}
+        </option>
+    {% endfor %}
+</select>
+
+{% if user_group == 'Admin' %}
+    <a href="{% url 'admin:index' %}" class="btn btn-white btn-sm custom-outline">Admin Group</a>
+{% else %}
+    <a href="{% url 'admin:index' %}" class="btn btn-white btn-sm custom-outline">User Group</a>
+{% endif %}
