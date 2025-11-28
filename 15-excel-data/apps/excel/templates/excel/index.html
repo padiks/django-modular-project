@@ -1,0 +1,92 @@
+<!-- apps/excel/templates/excel/index.html -->
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="card shadow-lg p-4 mb-3">
+    <h4 class="mb-4 text-center">{{ title }}</h4>
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+	
+    {% block nav %}
+        {% include 'includes/_compute_nav.html' %}
+    {% endblock %}	
+
+    <div class="table-responsive">
+        <table class="table table-sm table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Member</th>
+                    <th>Targets</th>
+                    <th>Versus</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if xlsx %}
+                    {% for excel in xlsx %}
+                    <tr>
+                        <td>{{ excel.id }}</td>
+                        <td>{{ excel.member }}</td>
+                        <td>{{ excel.targets }}</td>
+                        <td>{{ excel.versus }}</td>
+                        <td>{{ excel.total }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="4">No xlsx file available.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="card shadow-lg p-4 mb-3">
+<pre><code># apps/excel/views.py
+# (venv) $ pip install openpyxl
+# /home/user/Public/web/project_folder/data/excel.xlsx
+from django.shortcuts import render
+import os
+from django.conf import settings
+from openpyxl import load_workbook
+
+def index(request):
+    file_path = os.path.join(settings.BASE_DIR, 'data', 'excel.xlsx')
+    xlsx_data = []
+
+    try:
+        wb = load_workbook(filename=file_path)
+        ws = wb.active  # first sheet
+
+        # Assuming first row is headers, start from row 2
+        for row in ws.iter_rows(min_row=1, max_row=10, values_only=True):
+            # map your columns to keys
+            xlsx_data.append({
+                "id": row[0],
+                "member": row[1],
+                "targets": row[2],
+                "versus": row[3],
+                "total": row[4],
+            })
+
+        context = {
+            "title": "Excel Data",
+            "xlsx": xlsx_data,
+        }
+
+    except Exception as e:
+        context = {
+            "title": "Excel Data",
+            "xlsx": [],
+            "error": f"Failed to read Excel file: {e}"
+        }
+
+    return render(request, 'excel/index.html', context)
+</code></pre>
+</div>
+{% endblock %}
