@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="card shadow-lg p-4 mb-3">
+
+    <h4 class="mb-4 text-center">{{ title }}</h4>
+
+    <div class="mb-3 d-flex flex-wrap align-items-center gap-2">
+        <label for="tableSelect" class="form-label mb-0">Table:</label>
+
+        {% include 'includes/_table_select.html' %}
+
+        {% if user_group == 'Admin' %}
+            <a href="{% url 'categories:add' %}" class="btn btn-success btn-sm" style="position: absolute; right: 25px;">Add</a>
+        {% else %}
+            <a href="#" class="btn btn-success btn-sm disabled" style="position: absolute; right: 25px;" title="View Only">Add</a>
+        {% endif %}
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-sm table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Created At</th>
+                    <th>Updated At</th>
+                    <th width="120">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in records %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.description }}</td>
+                    <td>{{ row.get_status_display }}</td>
+                    <td>{{ row.created_at }}</td>
+                    <td>{{ row.updated_at }}</td>
+                    <td class="text-nowrap d-flex gap-1">
+                        {% if user_group == 'Admin' %}
+                            <a href="{% url 'categories:update' row.id %}" class="btn btn-light btn-sm">Update</a>
+                            <a href="{% url 'categories:delete' row.id %}" onclick="return confirm('Delete this record?')" class="btn btn-light btn-sm">Delete</a>
+                        {% else %}
+                            <a href="#" class="btn btn-light btn-sm disabled" title="View Only">Update</a>
+                            <a href="#" class="btn btn-light btn-sm disabled" title="View Only">Delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}
