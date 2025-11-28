@@ -98,13 +98,14 @@ This means **every guide folder already includes all features, files, and improv
 Minimal requirements (already tested on **Windows** and **Debian**):
 
 ```
-asgiref==3.10.0
 Django==5.2.8
+django-cors-headers==4.9.0
 django-debug-toolbar==6.1.0
+djangorestframework==3.16.1
+djangorestframework_simplejwt==5.5.1
 Markdown==3.10
-sqlparse==0.5.3
-djangorestframework
-djangorestframework-simplejwt
+openpyxl==3.1.5
+requests==2.32.5
 ```
 
 ---
@@ -183,4 +184,5 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
