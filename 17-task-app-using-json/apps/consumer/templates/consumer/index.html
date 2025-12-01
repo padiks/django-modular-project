@@ -1,0 +1,102 @@
+<!-- apps/consumer/templates/consumer/index.html -->
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="card shadow-lg p-4 mb-3">
+    <h4 class="mb-4 text-center">{{ title }}</h4>
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+	
+    {% block nav %}
+        {% include 'includes/_compute_nav.html' %}
+    {% endblock %}	
+
+    <div class="mb-3 d-flex flex-wrap align-items-center gap-2">
+		<a href="https://padiks.pythonanywhere.com/api/books/" 
+		   class="btn btn-success btn-sm"
+		   style="position: absolute; right: 25px; margin-bottom:10px;"
+		   target="_blank"
+		   title="Books List - padiks.pythonanywhere.com/api/books/">
+		   Rest API Framework
+		</a>
+    </div>
+
+    <div class="table-responsive">
+        <table id="itemsTable" class="table table-sm table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Published Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if books %}
+                    {% for book in books %}
+                    <tr>
+                        <td>{{ book.id }}</td>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.author }}</td>
+                        <td>{{ book.published_date }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="4">No books available.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="card shadow-lg p-4 mb-3">
+<pre><code># apps/consumer/views.py
+# (venv) $ pip install requests
+import requests
+from django.shortcuts import render
+
+def index(request):
+    # Fetch data from the external API
+    api_url = "https://padiks.pythonanywhere.com/api/books/"
+    response = requests.get(api_url)
+
+    # if not any(group in allowed_groups for group in user_groups):
+        # If the user is not in one of the allowed groups, deny access
+        # return HttpResponseForbidden("You do not have permission to view this data.")		
+	
+    if response.status_code == 200:
+        # Since the API returns a list of books, we can directly assign the list to books_data
+        books_data = response.json()  # No need to use .get() here, as the response is a list
+        context = {
+            'title': 'Books List - Rest API Consumer',
+            'books': books_data,  # Passing the list directly
+        }
+    else:
+        context = {
+            'title': 'Books List',
+            'books': [],
+            'error': 'Failed to fetch data from API'
+        }
+
+    return render(request, 'consumer/index.html', context)
+</code></pre>
+<pre><code># apps/api/views.py
+# (venv) $ pip install djangorestframework
+# (venv) $ pip install djangorestframework_simplejwt
+from rest_framework import viewsets
+from .models import Book
+from .serializers import BookSerializer
+
+class BookViewSet(viewsets.ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+    # Allow only GET requests
+    http_method_names = ['get']
+</code></pre></div>
+{% endblock %}
