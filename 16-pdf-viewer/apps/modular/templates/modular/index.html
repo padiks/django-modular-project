@@ -1,0 +1,21 @@
+<!-- apps/modular/templates/modular/index.html -->
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="card shadow-lg p-4 mb-3">
+    <h4 class="mb-4 text-center">{{ title }}</h4>
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+	
+    {% block nav %}
+        {% include 'includes/_compute_nav.html' %}
+    {% endblock %}
+    
+    <p>Modular template goes here ...</p>
+    
+</div>
+{% endblock %}
