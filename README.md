@@ -69,7 +69,7 @@ project_folder/
 
 ## 📘 **Included Learning Guides**
 
-The project includes **14 modular guides**, each a self-contained working project:
+The project includes **16 modular guides**, each a self-contained working project:
 
 | Guide                                          | Description                                                                                                  |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
@@ -88,6 +88,7 @@ The project includes **14 modular guides**, each a self-contained working projec
 | **13 — Django Rest Framework (DRF)**           | Setting up a based API to manage data such as books.                                                         |
 | **14 — Rest API Consumer**                     | Fetch and display data from an external REST API in Django.                                                  |
 | **15 — Display Excel Data**                    | Read and display Excel data in a table format.                                                               |
+| **16 — PDF Viewer**                            | Load a PDF from the media folder, and render it page-by-page using PDF.js                                    |
 
 Each guide is a **fully working project** and **continues from the previous guide**.
 This means **every guide folder already includes all features, files, and improvements from the earlier guides**, so you can download **any guide** and run it instantly.
@@ -185,6 +186,7 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
 
 
