@@ -1,0 +1,26 @@
+<!-- templates/includes/_compute_nav.html -->
+<div class="mb-3">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link border" href="{% url 'taskjson:index' %}">Task using JSON</a>
+        </li>		
+        <li class="nav-item">
+            <a class="nav-link border" href="{% url 'compute:summation' %}">Summation</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link border" href="{% url 'compute:summary' %}">Alpine.js</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link border" href="{% url 'excel:index' %}">Excel Data</a>
+        </li> 		
+        <li class="nav-item">
+            <a class="nav-link border" href="{% url 'api:book-list' %}" target="_blank">Rest API Framework</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link border" href="{% url 'consumer:index' %}">Rest API Consumer</a>
+        </li>		
+        <li class="nav-item">
+            <a class="nav-link border" href="/api/token/" target="_blank">Token Obtain Pair</a>
+        </li>		
+    </ul>
+</div>

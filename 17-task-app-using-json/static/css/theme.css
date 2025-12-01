@@ -1,0 +1,85 @@
+/* ===== DARK MODE FOR MAIN SITE ===== */
+
+html.dark body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Paragraphs */
+html.dark p {
+    color: #d0d0d0;
+}
+
+/* Cards */
+html.dark .card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #333;
+}
+
+/* Tables */
+html.dark table,
+html.dark table td,
+html.dark table th {
+    color: #e0e0e0;
+    border-color: #333 !important;
+    background-color: #1a1a1a;
+}
+
+html.dark .table tbody tr:nth-child(even) {
+    background-color: #161616 !important;
+}
+
+/* Buttons */
+html.dark .btn,
+html.dark button {
+    color: #ffffff;
+    background-color: #333;
+    border-color: #444;
+}
+
+html.dark .btn:hover,
+html.dark button:hover {
+    background-color: #444;
+}
+
+/* Preformatted code blocks */
+html.dark pre {
+    color: #dddddd;
+    background-color: #1e1e1e;
+    border-color: #333;
+    box-shadow: none;
+}
+
+/* Footer */
+html.dark footer.attribution {
+    background-color: #121212;
+    color: #aaa;
+}
+
+html.dark footer.attribution p {
+    color: #aaa !important;
+}
+
+/* Links */
+html.dark a {
+    color: #80bfff !important;
+}
+
+html.dark {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+html.dark a {
+    color: #ffffff;
+}
+
+html.dark .navbar {
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+}
+
+html.dark .navbar .nav-link {
+    color: #ffffff !important;
+}
