@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="card shadow-lg p-4 mb-3">
+    <h4 class="mb-4 text-center">{{ title }}</h4>
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+
+    {% block nav %}
+        {% include 'includes/_compute_nav.html' %}
+    {% endblock %}
+
+    <!-- Show the user’s group (for debugging purposes) -->
+	<div class="mb-3 d-flex flex-wrap align-items-center gap-2">
+        <label for="labelUser" class="form-label mb-0">User Group: {{ user_group }}</label>	
+
+		{% if user_group == 'Admin' %}
+			<a href="{% url 'taskjson:create_task' %}" class="btn btn-success btn-sm" style="position: absolute; right: 25px;">Add Task</a>
+		{% endif %}
+	</div>
+
+
+    <div class="table-responsive">
+        <table id="itemsJSONTable" class="table table-sm table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Task</th>
+                    <th>Completed</th>
+                    <th width="120">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if json_file %}
+                    {% for record in json_file %}
+                    <tr>
+                        <td>{{ record.id }}</td>
+                        <td>{{ record.created_at }}</td>
+                        <td>{{ record.task }}</td>
+                        <td>{% if record.completed %}Yes{% else %}No{% endif %}</td>
+						<td class="text-nowrap d-flex gap-1">
+							{% if user_group == 'Admin' %}
+									<a href="{% url 'taskjson:edit_task' task_id=record.id %}" class="btn btn-warning btn-sm">Edit</a>
+									<a href="{% url 'taskjson:delete_task' task_id=record.id %}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this task?')">Delete</a>
+							{% else %}
+									<a href="#" class="btn btn-warning btn-sm disabled">Edit</a>
+									<a href="#" class="btn btn-danger btn-sm disabled">Delete</a>
+							{% endif %}
+						</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="5">No tasks available.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
