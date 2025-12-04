@@ -1,4 +1,4 @@
-# **DB Pilot – Django Modular Project**
+# **Django Modular Project**
 
 **Django Modular Project** is a lightweight, modular **Django** application demonstrating complete **CRUD** operations using **SQLite**.
 It is designed as a **step-by-step learning project**, showing how to build scalable Django apps with a clean, modular architecture.
@@ -201,6 +201,7 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
 
 
