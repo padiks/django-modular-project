@@ -10,10 +10,10 @@ Available login credentials:
 * **User account:** `user` / `demo`
 * **Admin account:** `admin` / `root`
 
-```
 You can **check the running project online** at: [https://padiks.pythonanywhere.com](https://padiks.pythonanywhere.com) ✅  
+
 You can **access the documentation** at: [https://padiks.github.io/docs/](https://padiks.github.io/docs/) 📖
-```
+
 This live demo lets you **explore all modules**, test CRUD operations, and see role-based access in action without needing to set up anything locally.
 
 ---
@@ -201,6 +201,7 @@ Quit the server with CONTROL-C.
 
 This project is for **learning and educational use**.
 Feel free to explore, extend, and build upon it.
+
 
 
 
